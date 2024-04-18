@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.0'
-    id 'io.spring.dependency-management' version '1.1.4'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group = 'com.example'
@@ -13,13 +13,28 @@ java {
 
 repositories {
     mavenCentral()
+    google()
+    gradlePluginPortal()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'mysql:mysql-connector-java:8.0.23'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // Spock testing framework
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+    // Groovy support for Spock
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.9'
+
+    // Optionally, you might need mockito-core for mocking dependencies
+    testImplementation 'org.mockito:mockito-core:3.10.0'
+
+
+
+
+
 }
 
 tasks.named('test') {

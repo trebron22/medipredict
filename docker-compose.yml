@@ -4,11 +4,8 @@ services:
     command: --default-authentication-plugin=caching_sha2_password
     restart: always
     environment:
-      MYSQL_DATABASE: 'company'
+      MYSQL_DATABASE: 'medipredict'
       MYSQL_ROOT_PASSWORD: 'password'
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      -  C:\ALLSOFTWARE\youtube_1\SpringGradle\data:/var/lib/mysql
     ports:
       - "3306:3306"
   spring-app:
